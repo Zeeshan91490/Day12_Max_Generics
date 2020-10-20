@@ -49,9 +49,6 @@ public class FindMaximumTest {
 		Assert.assertEquals((Float) 6.6f, maxF);
 		
 		String[] arrayS = {"Cat", "Banana", "Apple", "Ant", "Bat","Peach"};
-		String maxS = new FindMaximum<String>(arrayS).testMax();
-		Assert.assertEquals("Peach", maxS);
-	}
-}
+		String maxS = new FindMaximum<String>(arrayS).testMax();		Assert.assertEquals("Peach", maxS);
 
 
