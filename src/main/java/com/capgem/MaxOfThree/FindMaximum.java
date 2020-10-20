@@ -1,36 +1,33 @@
 package com.capgemini.MaxOfThree;
 
-import java.util.Arrays;
+public class FindMaximum {
 
-public class FindMaximum<E extends Comparable<E>> {
-
-	E[] elementArray;
-
-	public FindMaximum(E[] elementArray) {
-		this.elementArray = elementArray;
-	}
-
-	public E testMax() {
-		return FindMaximum.testMax(elementArray);
-	}
-
-	public static <E extends Comparable<E>> E testMax(E[] elementArray) {
-		E max = elementArray[0];
-		for (E element : elementArray)
-			if (element.compareTo(max) > 0) {
-				max = element;
-			}
-		printMax(elementArray, max);
+	public static Integer testMax(Integer x, Integer y, Integer z) {
+		Integer max = x;
+		if (y.compareTo(max) > 0) {
+			max = y;
+		}
+		if (z.compareTo(max) > 0) {
+			max = z;
+		}
 		return max;
 	}
-	
-	public static<E> void printMax(E[] elementArray, E max) {
-		System.out.println("Max of " + Arrays.toString(elementArray) + " is " + max );
+
+	public static Float testMax(Float x, Float y, Float z) {
+		Float max = x;
+		if (y.compareTo(max) > 0) {
+			max = y;
+		}
+		if (z.compareTo(max) > 0) {
+			max = z;
+		}
+		return max;
 	}
 
 	public static void main(String[] args) {
 
-		Integer[] arrayI = {1,2,3,4,5,6};
-		System.out.println(new FindMaximum<Integer>(arrayI).testMax());
+		System.out.println(testMax(1, 2, 3));
+		System.out.println(testMax(1.1f,1.2f,1.3f));
+		
 	}
 }

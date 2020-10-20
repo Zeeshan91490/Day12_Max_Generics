@@ -8,50 +8,30 @@ public class FindMaximumTest {
 	@Test
 	public void givenMaximum_AtFirstPosition_ShouldReturnMaximum() {
 		
-		Integer[] arrayI = {6,5,4,3,2,1};
-		Integer maxI = new FindMaximum<Integer>(arrayI).testMax();
-		Assert.assertEquals((Integer) 6, maxI);
+		Integer max = FindMaximum.testMax(3, 1, 2);
+		Assert.assertEquals((Integer) 3, max);
 
-		Float[] arrayF = {12.1f,2.2f,9.9f,5.5f,6.6f};
-		Float maxF = new FindMaximum<Float>(arrayF).testMax();
-		Assert.assertEquals((Float) 12.1f, maxF);
+		Float maxf = FindMaximum.testMax(9.1f, 2.5f, 0.6f);
+		Assert.assertEquals((Float) 9.1f, maxf);
+	}
+
+	@Test
+	public void givenMaximum_AtSecondPosition_ShouldReturnMaximum() {
 		
-		String[] arrayS = {"Peach", "Banana", "Apple", "Ant"};
-		String maxS = new FindMaximum<String>(arrayS).testMax();
-		Assert.assertEquals("Peach", maxS);
+		Integer max = FindMaximum.testMax(3, 4, 2);
+		Assert.assertEquals((Integer) 4, max);
+
+		Float maxf = FindMaximum.testMax(1.1f, 2.5f, 0.6f);
+		Assert.assertEquals((Float) 2.5f, maxf);
 	}
 
 	@Test
 	public void givenMaximum_AtThirdPosition_ShouldReturnMaximum() {
 		
-		Integer[] arrayI = {6,5,9,2,1,0};
-		Integer maxI = new FindMaximum<Integer>(arrayI).testMax();
-		Assert.assertEquals((Integer) 9, maxI);
+		Integer max = FindMaximum.testMax(3, 4, 5);
+		Assert.assertEquals((Integer) 5, max);
 
-		Float[] arrayF = {1.1f,2.2f,9.9f,5.5f,6.6f};
-		Float maxF = new FindMaximum<Float>(arrayF).testMax();
-		Assert.assertEquals((Float) 9.9f, maxF);
-		
-		String[] arrayS = {"Ant", "Cat", "Peach", "Banana", "Apple", "Ant"};
-		String maxS = new FindMaximum<String>(arrayS).testMax();
-		Assert.assertEquals("Peach", maxS);
-	}
-
-	@Test
-	public void givenMaximum_AtSixthPosition_ShouldReturnMaximum() {
-		
-		Integer[] arrayI = {6,5,4,9,2,10};
-		Integer maxI = new FindMaximum<Integer>(arrayI).testMax();
-		Assert.assertEquals((Integer) 10, maxI);
-
-		Float[] arrayF = {1.1f,2.2f,4.9f,5.5f,6.6f};
-		Float maxF = new FindMaximum<Float>(arrayF).testMax();
-		Assert.assertEquals((Float) 6.6f, maxF);
-		
-		String[] arrayS = {"Cat", "Banana", "Apple", "Ant", "Bat","Peach"};
-		String maxS = new FindMaximum<String>(arrayS).testMax();
-		Assert.assertEquals("Peach", maxS);
+		Float maxf = FindMaximum.testMax(1.1f, 2.5f, 10.6f);
+		Assert.assertEquals((Float) 10.6f, maxf);
 	}
 }
-
-
